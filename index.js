@@ -22,6 +22,12 @@ app.get('/news-category/:id', (req, res) => {
     res.send(category_news);
 })
 
+app.get('/news/:id', (req, res) => {
+    const id = req.params.id;
+    const selectedNews = news.find(n => n._id === id);
+    res.send(selectedNews);
+})
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 });
